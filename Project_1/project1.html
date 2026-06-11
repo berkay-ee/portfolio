@@ -1,120 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Drop Test Analysis Project</title>
+    <title>VESTEL Drop Test Validation Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* --- 1. BASE STYLING --- */
-        body {
-            background-color: #1a4f8b; 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0; 
-        }
-
-        /* --- NEW FULL-SCREEN CONTAINER --- */
-        .project-details-container {
-            width: 100%; 
-            min-height: 100vh; 
-            padding: 40px 5%; 
-            background-color: #1a4f8b; 
-            color: #e2e8f0; 
-            box-sizing: border-box; 
-        }
-
-        /* --- WIDE HERO IMAGE --- */
-        .project-image {
-            width: 100%; 
-            max-height: 60vh; 
-            border-radius: 12px; 
-            margin-bottom: 30px; 
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            object-fit: cover; 
-            cursor: pointer; 
-            transition: transform 0.4s ease; 
-        }
-
-        .project-image:hover {
-            transform: scale(1.02); 
-        }
-
-        /* --- 3. TYPOGRAPHY --- */
-        h1.text-gradient {
-            background: linear-gradient(90deg, #64ffda, #118ab2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-top: 0;
-            font-size: 2.5rem; 
-        }
-
-        h2 {
-            color: #64ffda; 
-            margin-top: 35px;
-            border-bottom: 1px solid #2863a3; 
-            padding-bottom: 8px;
-        }
-
-        p {
-            max-width: 900px;
-            font-size: 1.1rem;
-        }
-
-        /* --- 4. BUTTON LAYOUT --- */
-        .button-group {
-            margin-top: 40px;
-            display: flex;
-            gap: 15px; 
-            flex-wrap: wrap; 
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        /* Secondary Button (Close Tab) */
-        .btn-secondary {
-            background-color: transparent;
-            color: #64ffda;
-            border: 2px solid #64ffda;
-        }
-        .btn-secondary:hover {
-            background-color: rgba(100, 255, 218, 0.1); 
-            transform: translateY(-2px);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body> 
     <div class="project-details-container">
         
-        <img src="project-screenshot.jpg" alt="Preview of Ansys Drop Test" class="project-image" id="portfolioImage">
-
-        <h1 class="text-gradient">Drop Test Analysis and Experimental Validation in Ansys</h1>
-        <p>A comprehensive engineering validation project comparing digital Ansys simulation results with real-world physical drop test data.</p>
+        <h1 class="text-gradient">ISTA 6 Drop Test Analysis & Hardware Validation</h1>
+        <p><strong>Role:</strong> Electronic Engineer at VESTEL</p>
+        <p>A comprehensive engineering validation project utilizing custom-designed electronics to cross-validate digital Ansys simulation results with real-world physical drop test data.</p>
         
-        <h2>The Challenge</h2>
-        <p>The primary objective was to ensure that the digital drop test simulations performed in Ansys accurately mirrored real-world physical impacts. To do this, we needed a reliable way to capture the physical responses of the test object during a live drop and translate those findings into actionable data to compare against the simulation models.</p>
+        <h2>The Challenge: Validating ISTA 6 Standards</h2>
+        <p>During my tenure as an Electronic Engineer at VESTEL, our team conducted rigorous ISTA 6 mechanical stress and drop tests. While we utilized the Ansys simulation environment to predict product durability digitally, relying purely on software simulations left a gap in our testing confidence. We needed a highly reliable way to capture the exact physical forces—tension, angle, and acceleration—acting on the product during a live drop to ensure our digital models mirrored reality.</p>
 
-        <h2>The Solution</h2>
-        <p>To validate the Ansys simulation, we instrumented the physical test subject with a combination of sensors. We captured precise strain values using a strain gauge aligned to specific axes. Additionally, we utilized an accelerometer and a gyroscope to track the exact motion, impact forces, and rotational dynamics. By comparing this real-life sensor data directly with the theoretical simulation outputs, we successfully validated the accuracy of the Ansys drop test models.</p>
+        <h2>The Engineering Solution</h2>
+        <p>To bridge the gap between software and physical testing, I engineered a custom Data Acquisition (DAQ) electronic system from the ground up. I designed a dual-board solution featuring a Main processing PCB and a custom IMU (Inertial Measurement Unit) sensor board. By strategically combining these boards with strain gauges mounted directly to the product, we successfully captured microsecond-level impact data.</p>
+
+        <p>Furthermore, because physical wires would alter the fall mechanics of the product, I implemented a <strong>wireless data transmission protocol</strong>. This allowed for real-time telemetry monitoring throughout the testing process without interfering with the physical drop.</p>
+
+        <h2>Custom Hardware Architecture</h2>
+        <p>To capture this high-fidelity data, the system was split into two custom-designed boards that worked together seamlessly:</p>
+
+        <div class="hardware-explanation">
+            <h3>1. The IMU Sensor Board (The "Eyes")</h3>
+            <p>Because of its tiny footprint, the custom IMU board was mounted directly at the critical impact zones predicted by Ansys. It housed a high-precision accelerometer and gyroscope to capture the exact rotational velocity and extreme deceleration the moment the product hit the ground.</p>
+            
+            <h3>2. The Main DAQ PCB (The "Brain")</h3>
+            <p>The Main PCB acted as the central processing unit. It handled power regulation, processed the high-speed signals coming from both the IMU and the external strain gauges, and handled the wireless telemetry to transmit the data in real-time to our monitoring stations.</p>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="gallery-card">
+                <img src="Main_PCB_top.png" alt="Main PCB Top View" class="gallery-img">
+                <h3>Main PCB (Top)</h3>
+                <p class="small-text">The primary processing hub handling sensor inputs and wireless data transmission.</p>
+            </div>
+
+            <div class="gallery-card">
+                <img src="Main_PCB_Bottom.png" alt="Main PCB Bottom View" class="gallery-img">
+                <h3>Main PCB (Bottom)</h3>
+                <p class="small-text">Bottom routing for power distribution and high-speed signal processing.</p>
+            </div>
+
+            <div class="gallery-card">
+                <img src="IMU_TOP.png" alt="IMU Board Top View" class="gallery-img">
+                <h3>IMU Sensor Board (Top)</h3>
+                <p class="small-text">Houses the critical accelerometer and gyroscope to measure impact forces.</p>
+            </div>
+
+            <div class="gallery-card">
+                <img src="IMU_Bottom.png" alt="IMU Board Bottom View" class="gallery-img">
+                <h3>IMU Sensor Board (Bottom)</h3>
+                <p class="small-text">Compact footprint designed specifically for mounting at high-stress impact zones.</p>
+            </div>
+        </div>
+
+        <h2>Testing Setup & Cross-Validation Results</h2>
+        <p>The collected live data was analyzed and cross-validated directly against our Ansys simulation environment. This hardware-to-software validation loop successfully proved the accuracy of our simulations, significantly enhancing the reliability of VESTEL's test evaluations and future product designs.</p>
+
+        <div class="image-gallery">
+            <div class="gallery-card">
+                <img src="Vestel_box.png" alt="Vestel System Setup" class="gallery-img">
+                <h3>System Integration</h3>
+                <p class="small-text">The custom DAQ system securely mounted onto the VESTEL product prior to the ISTA 6 drop test.</p>
+            </div>
+
+            <div class="gallery-card">
+                <img src="Tv_Strain_Gauge.png" alt="TV Strain Gauge" class="gallery-img">
+                <h3>Strain Data Collection</h3>
+                <p class="small-text">A strain gauge attached directly to the chassis to capture precise physical material tension.</p>
+            </div>
+        </div>
+
+       
+        <div class="recognition-banner">
+            <img src="Universty_award.png" alt="EBSO University-Industry Collaboration Award" class="award-img">
+            <div class="award-text">
+                <h2>Project Recognition</h2>
+                <p>Honored with the <strong>Ege Bölgesi Sanayi Odası (EBSO) University-Industry Collaboration Award</strong>. This was awarded in recognition of the rigorous engineering design, practical industrial application, and the successful software-to-hardware validation loop achieved during this project with VESTEL.</p>
+            </div>
+        </div>
 
         <div class="button-group">
-            <a href="#" onclick="window.close();" class="btn btn-secondary">Close this tab</a>
+            <button id="closeBtn" class="btn btn-secondary">Close this tab</button>
         </div>
         
     </div>
 
-    <script>
-        const myImage = document.getElementById('portfolioImage');
-        myImage.addEventListener('click', function() {
-            alert("Thanks for checking out my work! Capturing the live strain gauge and accelerometer data was key to making this Ansys validation successful.");
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
