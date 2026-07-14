@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Battery Management System - Berkay Aydın</title>
+    <link rel="icon" href="../assets/favicon.ico" type="image/ico" sizes="16x16" />
+    <meta name="description" content="Battery Management System Project by Berkay Aydın" />
+    <meta name="theme-color" content="#1b4778" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        body {
+            background-color: #1b4778; 
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .project-container {
+            max-width: 900px;
+            margin: 80px auto 80px auto;
+            padding: 0 30px;
+            text-align: left;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 40px;
+            color: #4fd1c5;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        /* Typography */
+        .project-main-title {
+            color: #4fd1c5;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .project-role {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+        }
+
+        .project-role strong {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .project-summary {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #e2e8f0;
+        }
+
+        .project-divider {
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            margin: 50px 0;
+        }
+
+        .project-sub-heading {
+            color: #4fd1c5;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .project-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #e2e8f0;
+        }
+
+        /* Tech Stack Badges */
+        .tech-stack {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0 20px 0;
+        }
+
+        .tech-badge {
+            background-color: transparent;
+            color: #4fd1c5;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(79, 209, 197, 0.4);
+            transition: background-color 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            background-color: rgba(79, 209, 197, 0.1);
+        }
+
+        /* Gallery Cards (Updated to match your screenshot) */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-card {
+            background-color: rgba(255, 255, 255, 0.05); /* Slight highlight for the card */
+            border: 1px solid rgba(79, 209, 197, 0.3); /* Teal border */
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(79, 209, 197, 0.6);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain; /* Keeps the whole PCB visible without cropping */
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-card h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .gallery-card p {
+            color: #e2e8f0;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-main-title { font-size: 2.2rem; }
+            .project-sub-heading { font-size: 1.5rem; }
+            .project-container { margin-top: 40px; padding: 0 20px; }
+            .gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="project-container">
+            <a href="../index.html#portfolio" class="back-link" data-aos="fade-right">← Back to Portfolio</a>
+
+            <h1 class="project-main-title" data-aos="fade-up">Battery Management System (BMS) Design & Implementation</h1>
+            
+            <div class="project-role" data-aos="fade-up">
+                <strong>Role:</strong> Electronic Subgroup Member & Battery Officer at Solar Team Solaris
+            </div>
+
+            <p class="project-summary" data-aos="fade-up">
+                A comprehensive hardware and embedded software engineering project focused on ensuring the safe, efficient, and reliable operation of a 12-cell battery pack for a highly competitive solar vehicle.
+            </p>
+
+            <div class="tech-stack" data-aos="fade-up">
+                <span class="tech-badge">C / C++</span>
+                <span class="tech-badge">Altium / KiCad</span>
+                <span class="tech-badge">CAN-Bus / UART</span>
+                <span class="tech-badge">PCB Design</span>
+            </div>
+
+            <hr class="project-divider" data-aos="fade-up">
+
+            <h2 class="project-sub-heading" data-aos="fade-up">The Challenge: Managing High-Stress Energy Systems</h2>
+            <p class="project-text" data-aos="fade-up">
+                During competitive solar racing, battery packs are subjected to extreme charge and discharge cycles, unpredictable environmental conditions, and high mechanical stress. Relying on basic monitoring was insufficient for the safety and performance standards required. We needed a highly reliable way to capture the exact parameters—voltage, current, temperature, and State of Charge (SoC)—acting on 12 individual cells to prevent overcharge, over-discharge, and dangerous thermal runaways.
+            </p>
+
+            <hr class="project-divider" data-aos="fade-up">
+
+            <h2 class="project-sub-heading" data-aos="fade-up">The Engineering Solution</h2>
+            <p class="project-text" data-aos="fade-up">
+                To bridge the gap between basic power delivery and intelligent battery management, I engineered a custom Battery Management System (BMS) from the ground up. I designed multi-layer PCBs utilizing Altium Designer and KiCad to handle precision sensor integration and safe power distribution.
+            </p>
+            <p class="project-text" data-aos="fade-up">
+                By strategically combining these custom boards with bare-metal C/C++ firmware, we successfully captured real-time battery data. I implemented robust CAN-Bus and UART communication protocols to stream this critical telemetry directly to the main vehicle control unit, enabling dynamic active and passive cell-balancing and ensuring peak operational safety.
+            </p>
+
+            <hr class="project-divider" data-aos="fade-up">
+
+            <h2 class="project-sub-heading" data-aos="fade-up">Hardware Architecture</h2>
+            
+            <div class="gallery" data-aos="fade-up">
+                <div class="gallery-card">
+                    <img src="bmsTop.png" alt="BMS PCB Top View" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=BMS+Top'">
+                    <h3>BMS PCB (Top)</h3>
+                    <p>The primary processing hub handling sensor inputs, cell-balancing circuits, and CAN-Bus telemetry transmission.</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="bmsBottom.png" alt="BMS PCB Bottom View" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=BMS+Bottom'">
+                    <h3>BMS PCB (Bottom)</h3>
+                    <p>Bottom routing optimized for high-current power distribution, robust ground planes, and high-speed signal integrity.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>       
+        AOS.init({
+            once: true,
+            delay: 50,
+            duration: 800
+        });
+    </script>
+</body>
+</html>

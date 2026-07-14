@@ -10,10 +10,7 @@
     <meta property="og:title" content="Berkay Aydın - Portfolio"/>
     <meta property="og:description" content="Professional Portfolio of Berkay Aydın - Electrical and Electronics Engineer"/>
     <meta property="og:type" content="website" />
-    <meta
-        property="og:image"
-        content="https://i.postimg.cc/8zMCscDr/deepsea.png"
-    />
+    <meta property="og:image" content="https://i.postimg.cc/8zMCscDr/deepsea.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -22,7 +19,9 @@
     <meta name="twitter:title" content="Berkay Aydın - Portfolio" />
     <meta name="twitter:description" content="Professional Portfolio of Berkay Aydın - Electrical and Electronics Engineer" />
     <link rel='apple-touch-icon' href='/logo.png'>
+    
     <link rel="stylesheet" href="index.css">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -38,21 +37,11 @@
 
             <div class="nav-links">
                 <ul>
-                    <li>
-                        <a class="nav-links-item" href="#">Home</a>
-                    </li>
-                    <li>
-                        <a class="nav-links-item" href="#about">Experience</a>
-                    </li>
-                    <li>
-                        <a class="nav-links-item" href="#portfolio">Projects</a>
-                    </li>
-                    <li>
-                        <a class="nav-links-item" href="#certifications">Certifications</a>
-                    </li>
-                    <li>
-                        <a class="nav-links-item" href="#contact">Contact</a>
-                    </li>
+                    <li><a class="nav-links-item" href="#">Home</a></li>
+                    <li><a class="nav-links-item" href="#about">Experience</a></li>
+                    <li><a class="nav-links-item" href="#portfolio">Projects</a></li>
+                    <li><a class="nav-links-item" href="#certifications">Certifications</a></li>
+                    <li><a class="nav-links-item" href="#contact">Contact</a></li>
                 </ul>
             </div>
 
@@ -68,8 +57,7 @@
                 <p class="greet-text">Hi there! I am</p>
                 <p class="text-gradient name-text">Berkay Aydın</p>
                 <p class="job-text">Electrical & Electronics Engineer</p>
-                <p class="intro-text">Aspiring engineer with a strong passion for technology and innovation. I have developed a diverse set of technical skills, particularly in embedded systems, PCB, and circuit design. My experiences have led me to work on cutting-edge projects such as solar car development, battery management systems, and automated robotics, turning complex technical challenges into efficient, reliable products.
-                </p>
+                <p class="intro-text">Aspiring engineer with a strong passion for technology and innovation. I have developed a diverse set of technical skills, particularly in embedded systems, PCB, and circuit design. My experiences have led me to work on cutting-edge projects such as solar car development, battery management systems, and automated robotics, turning complex technical challenges into efficient, reliable products.</p>
                 <a href="#contact" class="contact-button">Contact Me</a>
             </div>
             <div class="hero-image" data-aos="fade-up">
@@ -162,7 +150,7 @@
                 <ul>
                     <li data-aos="fade-up">
                         <h3 class="port-title-text">
-                            <a href="bms.html" target="_blank" rel="noopener noreferrer">Battery Management Systems</a>
+                            <a href="bms-project/bms.html" target="_blank" rel="noopener noreferrer">Battery Management Systems</a>
                         </h3>
                         <p class="port-title-description">Designed hardware and embedded software for BMS in solar cars. Monitored 12 battery cells for safe operation, preventing overcharge and thermal issues, while transmitting real-time data to the main controller via CAN-Bus.</p>
                         <ul>
@@ -210,31 +198,36 @@
         </section>
 
         <section id="certifications">
-            <h2 class="text-gradient" data-aos="fade-up">Certifications & Training</h2>
-            <div data-aos="fade-up" style="display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; text-align: left;">
+            <h2 class="text-gradient" data-aos="fade-up">Certifications</h2>
                 
-                <div>
-                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #e2e8f0;">Introduction to Automated Software Engineering</h3>
-                        <span style="font-size: 1rem; color: #a0aec0; font-weight: bold;">TTTech Auto</span>
-                    </div>
-                    <ul style="margin: 8px 0 0 0; padding-left: 1.5rem; font-size: 1rem; line-height: 1.6; color: #cbd5e0;">
-                        <li>V-Model life cycle for automotive software testing.</li>
-                        <li>Autosar automotive software introduction.</li>
-                        <li>Automotive hardware safety development.</li>
-                    </ul>
+            <div class="cert-card" data-aos="fade-up">
+                <div class="cert-image">
+                    <img src="assets/coursera-ml.jpg" alt="Machine Learning Certificate">
                 </div>
-
-                <div>
-                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #e2e8f0;">Mathematics, Machine Learning & Hardware Engineering</h3>
-                        <span style="font-size: 1rem; color: #a0aec0; font-weight: bold;">Coursera</span>
-                    </div>
-                    <ul style="margin: 8px 0 0 0; padding-left: 1.5rem; font-size: 1rem; line-height: 1.6; color: #cbd5e0;">
-                        <li>Completed comprehensive certificate programs focusing on advanced mathematical concepts, applied machine learning, and modern hardware engineering principles.</li>
-                    </ul>
+                <div class="cert-info">
+                    <h3>Coursera: Machine Learning</h3>
+                    <p>This certification covers predictive modeling, deep learning, and practical applications of ML algorithms, strengthening the foundation needed for advanced data processing.</p>
                 </div>
+            </div>
+        
+            <div class="cert-card" data-aos="fade-up">
+                <div class="cert-image">
+                    <img src="assets/coursera-hardware.jpg" alt="Hardware Engineering Certificate">
+                </div>
+                <div class="cert-info">
+                    <h3>Coursera: Hardware Engineering</h3>
+                    <p>Focused on interactive hardware prototypes, embedded computing, and rigorous engineering design from schematic to practical industrial application.</p>
+                </div>
+            </div>
 
+            <div class="cert-card" data-aos="fade-up">
+                <div class="cert-image">
+                    <img src="assets/coursera-math.jpg" alt="Mathematics Certificate">
+                </div>
+                <div class="cert-info">
+                    <h3>Coursera: Mathematics</h3>
+                    <p>Covers the foundational mathematics required for advanced engineering, signal processing, and algorithm development.</p>
+                </div>
             </div>
         </section>
 
@@ -275,9 +268,7 @@
             delay: 0
         });
     </script>
-
+    
+    <script src="index.js"></script>
 </body>
-
-<script src="index.js"></script>
-
 </html>
