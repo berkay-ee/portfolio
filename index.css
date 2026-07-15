@@ -592,6 +592,72 @@ footer p {
   margin: 0;
 }
 
+/* Ensure the original images look clickable */
+.cert-image img {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.cert-image img:hover {
+    opacity: 0.8; /* Slight dim on hover so they know it's clickable */
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top of everything else */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.85); /* Black with 85% opacity */
+}
+
+/* Modal Content (The Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Takes up 80% of the screen */
+    max-width: 900px; /* But won't get ridiculously huge on 4k monitors */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfectly centers the image */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+    border-radius: 8px;
+}
+
+/* The Close Button */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add a smooth zoom-in animation when opening */
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+@keyframes zoom {
+    from {transform: translate(-50%, -50%) scale(0.1)} 
+    to {transform: translate(-50%, -50%) scale(1)}
+}
+
 /* Mobile Responsiveness: Stacks the image on top of the text for small screens */
 @media (max-width: 768px) {
   .cert-card {
@@ -602,5 +668,8 @@ footer p {
     max-width: 100%;
   }
 }
-
+/* This is the missing piece that forces the modal to appear */
+.modal.show {
+    display: block;
+}
 

@@ -1,40 +1,38 @@
-const header = document.querySelector("header");
-const menuButton = document.querySelector(".hamburger-icon");
-const navLink = document.querySelector(".nav-links");
-const navIcon = document.getElementById("nav-icon");
-const navLinkItems = document.querySelectorAll(".nav-links-item");
+// --- Lightbox Modal (Pop-up Certification Image) ---
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("expandedImage");
+const closeBtn = document.querySelector(".close-modal");
+const certImages = document.querySelectorAll(".cert-image img");
 
-let showMenu = false;
-
-function closeNav() {
-  setTimeout(() => {
-    showMenu = false;
-    navLink.classList.remove("show-nav-links");
-    changeIcon();
-  }, 200);
-}
-
-function headerColor() {
-  window.scrollY >= 10 || showMenu
-    ? header.classList.add("scroll-header")
-    : header.classList.remove("scroll-header");
-}
-
-function changeIcon() {
-  showMenu
-    ? navIcon.setAttribute("src", "assets/x.svg")
-    : navIcon.setAttribute("src", "assets/hamburger.svg");
-}
-
-function toggleMenu() {
-  menuButton.addEventListener("click", () => {
-    navLink.classList.toggle("show-nav-links");
-    showMenu = !showMenu;
-    headerColor();
-    changeIcon();
+// Open modal upon clicking any certificate image
+certImages.forEach(img => {
+  img.addEventListener("click", () => {
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    modal.classList.add("show"); // This triggers the CSS rule we just added!
+    document.body.style.overflow = "hidden"; // Block page scrolling behind popup
   });
+});
+
+// Close modal function
+function closeModal() {
+  modal.classList.remove("show");
+  document.body.style.overflow = ""; // Reactivate scroll
 }
 
-toggleMenu();
-window.addEventListener("scroll", headerColor);
-navLink.addEventListener("click", closeNav);
+// Close events
+closeBtn.addEventListener("click", closeModal);
+
+// Close by clicking outside the image boundary
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+// Close using 'Escape' keyboard key
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && modal.classList.contains("show")) {
+    closeModal();
+  }
+});
