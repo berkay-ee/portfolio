@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FMCW Radar System - Berkay Aydın</title>
+    <link rel="icon" href="../assets/favicon.ico" type="image/ico" sizes="16x16" />
+    <meta name="description" content="FMCW Radar System Project by Berkay Aydın" />
+    <meta name="theme-color" content="#1b4778" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        body {
+            background-color: #1b4778; 
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .project-container {
+            max-width: 900px;
+            margin: 80px auto 80px auto;
+            padding: 0 30px;
+            text-align: left;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 40px;
+            color: #4fd1c5;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        /* Typography */
+        .project-main-title {
+            color: #4fd1c5;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .project-role {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+        }
+
+        .project-role strong {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .project-summary {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #e2e8f0;
+        }
+
+        .project-divider {
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            margin: 50px 0;
+        }
+
+        .project-sub-heading {
+            color: #4fd1c5;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .project-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #e2e8f0;
+        }
+
+        /* Tech Stack Badges */
+        .tech-stack {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0 20px 0;
+        }
+
+        .tech-badge {
+            background-color: transparent;
+            color: #4fd1c5;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(79, 209, 197, 0.4);
+            transition: background-color 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            background-color: rgba(79, 209, 197, 0.1);
+        }
+
+        /* Gallery Cards */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(79, 209, 197, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(79, 209, 197, 0.6);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-card h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .gallery-card p {
+            color: #e2e8f0;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-main-title { font-size: 2.2rem; }
+            .project-sub-heading { font-size: 1.5rem; }
+            .project-container { margin-top: 40px; padding: 0 20px; }
+            .gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="project-container">
+            <a href="../index.html#portfolio" class="back-link" data-aos="fade-right">← Back to Portfolio</a>
+
+            <h1 class="project-main-title" data-aos="fade-up">FMCW Radar: Range, Velocity & Ghost Target Detection</h1>
+            
+            <div class="project-role" data-aos="fade-up">
+                <strong>Role:</strong> Project Researcher & Developer (Supported by TÜBİTAK 2209/A)
+            </div>
+
+            <p class="project-summary" data-aos="fade-up">
+                A comprehensive hardware and signal processing project focused on designing an FMCW (Frequency-Modulated Continuous Wave) radar system. The project aimed to accurately determine the range and velocity of multiple targets while developing a novel algorithm to eliminate "ghost targets" in complex environments.
+            </p>
+
+            <div class="tech-stack" data-aos="fade-up">
+                <span class="tech-badge">MATLAB</span>
+                <span class="tech-badge">Digital Signal Processing (FFT)</span>
+                <span class="tech-badge">RF Circuit Design</span>
+                <span class="tech-badge">LTSpice</span>
+                <span class="tech-badge">Raspberry Pi 5</span>
+                <span class="tech-badge">Arduino UNO</span>
+            </div>
+
+            <hr class="project-divider" data-aos="fade-up">
+
+            <h2 class="project-sub-heading" data-aos="fade-up">The Challenge: The Phantom Target Problem</h2>
+            <p class="project-text" data-aos="fade-up">
+                In FMCW radar systems, detecting a single target is relatively straightforward. However, in multi-target environments, the system often struggles with interference, resulting in the appearance of non-existent objects known as "ghost targets." Distinguishing these phantom readings from real targets using standard 1-D and 2-D Fast Fourier Transform (FFT) algorithms poses a significant challenge, often requiring complex 3D FFT calculations and multiple antenna arrays.
+            </p>
+
+            <hr class="project-divider" data-aos="fade-up">
+
+            <h2 class="project-sub-heading" data-aos="fade-up">The Engineering Solution</h2>
+            <p class="project-text" data-aos="fade-up">
+                Instead of relying on hardware-heavy multiple antenna setups, I proposed a signal modulation algorithm. By dynamically altering the angle (slope) of the transmitted triangular FM (chirp) signal and pairing it with a secondary ascending FM signal, we were able to isolate the real targets. The real targets maintained high amplitude consistencies across different modulations, while the ghost targets dropped in amplitude, allowing them to be successfully filtered out in MATLAB simulations.
+            </p>
+            <p class="project-text" data-aos="fade-up">
+                Following successful simulations, I constructed a physical prototype utilizing an ADF4350 RF signal generator controlled by an Arduino UNO. I designed a custom Wye-configuration power splitter for low-frequency efficiency and a 4th-order Butterworth low-pass filter simulated in LTSpice. The radar data was then captured and processed using a high-performance Raspberry Pi 5 to perform real-time target analysis.
+            </p>
+
+            <hr class="project-divider" data-aos="fade-up">
+
+            <h2 class="project-sub-heading" data-aos="fade-up">System Architecture & Results</h2>
+            
+            <div class="gallery" data-aos="fade-up">
+                <div class="gallery-card">
+                    <img src="FFT.png" alt="MATLAB 1D FFT Simulation" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=1D+FFT+Simulation'">
+                    <h3>MATLAB Simulation</h3>
+                    <p>Algorithm development using 1-D and 2-D FFTs to calculate range and velocity, validating the ghost target elimination theory.</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="FMCW_circuit.png" alt="FMCW Radar Prototype Hardware" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=Hardware+Prototype'">
+                    <h3>Hardware Prototype</h3>
+                    <p>The physical system integrating the ADF4350 RF generator, mixer, RF amplifier, and custom power splitter interfaces.</p>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="signal_divider.png" alt="Custom Signal Divider Design" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=Signal+Divider'">
+                    <h3>Custom Signal Divider</h3>
+                    <p>A custom-designed Wye-configuration power splitter for efficient low-frequency signal distribution.</p>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="LTspice.png" alt="LTSpice Low-Pass Filter Simulation" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=LTSpice+Filter'">
+                    <h3>LTSpice Filter Simulation</h3>
+                    <p>LTSpice simulation of the 4th-order Butterworth low-pass filter and amplifier circuit designed to isolate the critical low-frequency beat signals.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>       
+        AOS.init({
+            once: true,
+            delay: 50,
+            duration: 800
+        });
+    </script>
+</body>
+</html>

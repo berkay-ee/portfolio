@@ -83,19 +83,35 @@
                     </ul>
                 </div>
 
-                <div>
-                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="margin: 0; font-size: 1.4rem;">
-                            <a href="https://www.vestel.com.tr" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">VESTEL</a>
-                        </h3>
-                        <span style="font-size: 1rem; color: #a0aec0; font-weight: bold;">January 2025 – August 2025</span>
+                <div style="display: grid; grid-template-columns: 1fr 180px; gap: 20px; align-items: start;">
+    
+                    <!-- Sol Taraf: Yazılar -->
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px;">
+                            <h3 style="margin: 0; font-size: 1.4rem;">
+                                <a href="https://www.vestel.com.tr" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">VESTEL</a>
+                            </h3>
+                            <span style="font-size: 1rem; color: #a0aec0; font-weight: bold;">January 2025 – August 2025</span>
+                        </div>
+                        <p style="margin: 8px 0 16px 0; font-weight: bold; color: #63b3ed; font-size: 1.1rem;">Electronic Engineer Project Intern</p>
+                        <ul style="margin: 0; padding-left: 1.5rem; font-size: 1rem; line-height: 1.6; color: #cbd5e0;">
+                            <li style="margin-bottom: 8px;">Developed a custom electronic system utilizing strain gauge and IMU sensors to measure tension, angle, and acceleration values during ISTA 6 mechanical stress testing.</li>
+                            <li style="margin-bottom: 8px;">Implemented wireless data transmission to enable real-time monitoring throughout the testing process.</li>
+                            <li>Analyzed and cross-validated collected data using the ENSIS simulation environment, enhancing the accuracy and reliability of test evaluations.</li>
+                        </ul>
                     </div>
-                    <p style="margin: 8px 0 16px 0; font-weight: bold; color: #63b3ed; font-size: 1.1rem;">Electronic Engineer Project Intern</p>
-                    <ul style="margin: 0; padding-left: 1.5rem; font-size: 1rem; line-height: 1.6; color: #cbd5e0;">
-                        <li style="margin-bottom: 8px;">Developed a custom electronic system utilizing strain gauge and IMU sensors to measure tension, angle, and acceleration values during ISTA 6 mechanical stress testing.</li>
-                        <li style="margin-bottom: 8px;">Implemented wireless data transmission to enable real-time monitoring throughout the testing process.</li>
-                        <li>Analyzed and cross-validated collected data using the ENSIS simulation environment, enhancing the accuracy and reliability of test evaluations.</li>
-                    </ul>
+
+                    <!-- Sağ Taraf: Küçük Resim (margin-top ile aşağı kaydırıldı) -->
+                    <div style="margin-top: 100px;">
+                        <img src="vestel.png" alt="Vestel Proje Görseli" style="width: 100%; height: auto; border-radius: 8px; cursor: zoom-in; border: 1px solid #4a5568; display: block;" onclick="document.getElementById('vestelModal').style.display='flex'">
+                    </div>
+
+                    <!-- Tıklayınca Açılacak Tam Ekran Pencere (Modal) -->
+                    <div id="vestelModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; cursor: zoom-out;" onclick="this.style.display='none'">
+                        <img src="vestel.png" alt="Vestel Proje Görseli Büyük" style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+                        <!-- Kapatma Çarpısı -->
+                        <span style="position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+                    </div>
                 </div>
 
                 <div>
@@ -172,7 +188,7 @@
                     </li>
                     <li data-aos="fade-up">
                         <h3 class="port-title-text">
-                            <a href="fmcw_radar.html" target="_blank" rel="noopener noreferrer">FMCW Radar (TÜBİTAK 2209-a)</a>
+                            <a href="fmcw_radar/fmcw_radar.html" target="_blank" rel="noopener noreferrer">FMCW Radar (TÜBİTAK 2209-a)</a>
                         </h3>
                         <p class="port-title-description">Designed hardware and software for a radar system utilizing a 100 MHz FM signal to detect object position and speed. Implemented multiple target detection algorithms to filter out ghost targets effectively.</p>
                         <ul>
@@ -182,17 +198,7 @@
                             <li>PCB Design</li>
                         </ul>
                     </li>
-                    <li data-aos="fade-up">
-                        <h3 class="port-title-text">
-                            <a href="electronic_load.html" target="_blank" rel="noopener noreferrer">Electronic Load Optimization</a>
-                        </h3>
-                        <p class="port-title-description">Monitored the efficiency of MPPT systems and solar panels. Analyzed battery characteristics and measured system efficiency using constant power, voltage, resistance, and current algorithms.</p>
-                        <ul>
-                            <li>Power Electronics</li>
-                            <li>Testing & Analysis</li>
-                            <li>Hardware Design</li>
-                        </ul>
-                    </li>
+                    
                 </ul>
             </div>
         </section>
@@ -202,33 +208,55 @@
                 
             <div class="cert-card" data-aos="fade-up">
                 <div class="cert-image">
-                    <img src="assets/ImperialMathMLAlgebra.png" alt="Machine Learning Certificate">
+                    <img src="assets/ImperialMathMLAlgebra.png" alt="Imperial Mathematics for Machine Learning: Linear Algebra Certificate">
                 </div>
                 <div class="cert-info">
                     <h3>IMPERIAL: Mathematics for Machine Learning: Linear Algebra</h3>
-                    <p>This certification covers the foundational math powering machine learning algorithms (matrices, vectors, eigenvalues) and implemented these concepts using Python and NumPy.</p>
+                    <p>Covers the foundational math powering machine learning algorithms (matrices, vectors, eigenvalues) and the implementation of these concepts using Python and NumPy.</p>
                 </div>
             </div>
         
             <div class="cert-card" data-aos="fade-up">
                 <div class="cert-image">
-                    <img src="assets/ImperialMathMLCalculus.png" alt="Hardware Engineering Certificate">
+                    <img src="assets/ImperialMathMLCalculus.png" alt="Imperial Mathematics for Machine Learning: Calculus Certificate">
                 </div>
                 <div class="cert-info">
                     <h3>IMPERIAL: Mathematics for Machine Learning: Calculus</h3>
-                    <p>This certification covers the mathematical foundations of machine learning, including differentiation, integration, and optimization techniques.</p>
+                    <p>Covers the mathematical foundations of machine learning, including differentiation, integration, and optimization techniques.</p>
                 </div>
             </div>
 
             <div class="cert-card" data-aos="fade-up">
                 <div class="cert-image">
-                    <img src="assets/ARM-MprosesorOverview.png" alt="Mathematics Certificate">
+                    <img src="assets/ARM-MprosesorOverview.png" alt="ARM Cortex-M Processors Overview Certificate">
                 </div>
                 <div class="cert-info">
                     <h3>ARM: Arm Cortex-M Processors Overview</h3>
                     <p>Covers the architecture, programming, and optimization of ARM Cortex-M series processors.</p>
                 </div>
             </div>
+
+            <div class="cert-card" data-aos="fade-up">
+                <div class="cert-image">
+                    <img src="assets/first_aid.png" alt="Turkish Red Crescent First Aider Certificate">
+                </div>
+                <div class="cert-info">
+                    <h3>Türk Kızılay: First Aider Certificate</h3>
+                    <p>Certifies the successful completion of Basic First Aid Training, demonstrating the knowledge and skills required to provide emergency medical assistance.</p>
+                </div>
+            </div>
+
+            <div class="cert-card" data-aos="fade-up">
+                <div class="cert-image">
+                    <img src="assets/ttechAuto.png" alt="TTTech Auto Certificate of Participation">
+                </div>
+                <div class="cert-info">
+                    <h3>TTTech Auto: Certificate of Participation</h3>
+                    <p>Certifies the participation in the "Introduction to Automotive Software Engineering" program, demonstrating foundational knowledge in the field.</p>
+                </div>
+            </div>
+
+            
         </section>
 
         <section id="contact">
