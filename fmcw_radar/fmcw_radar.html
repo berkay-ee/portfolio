@@ -140,6 +140,12 @@
             object-fit: contain;
             border-radius: 8px;
             margin-bottom: 20px;
+            cursor: pointer; /* Indicates it can be clicked */
+            transition: opacity 0.2s;
+        }
+
+        .gallery-card img:hover {
+            opacity: 0.8;
         }
 
         .gallery-card h3 {
@@ -156,12 +162,109 @@
             margin: 0;
         }
 
+        /* Split Screen Certificate Section */
+        .certificate-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 60px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(79, 209, 197, 0.3);
+        }
+
+        .certificate-image {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .certificate-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            cursor: pointer; /* Indicates it can be clicked */
+            transition: opacity 0.2s;
+        }
+        
+        .certificate-image img:hover {
+            opacity: 0.8;
+        }
+
+        .certificate-text {
+            flex: 1;
+        }
+
+        /* Image Modal (Lightbox) Styles */
+        .image-modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); /* Black w/ opacity */
+            overflow: auto;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .image-modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+            animation: zoomIn 0.3s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #4fd1c5;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @keyframes zoomIn {
+            from {transform: scale(0.9); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .project-main-title { font-size: 2.2rem; }
             .project-sub-heading { font-size: 1.5rem; }
             .project-container { margin-top: 40px; padding: 0 20px; }
             .gallery { grid-template-columns: 1fr; }
+            
+            /* Stacks the certificate on smaller screens */
+            .certificate-section {
+                flex-direction: column;
+            }
+            .certificate-image {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -213,39 +316,98 @@
             
             <div class="gallery" data-aos="fade-up">
                 <div class="gallery-card">
-                    <img src="FFT.png" alt="MATLAB 1D FFT Simulation" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=1D+FFT+Simulation'">
+                    <img class="expandable-image" src="FFT.png" alt="MATLAB 1D FFT Simulation" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=1D+FFT+Simulation'">
                     <h3>MATLAB Simulation</h3>
                     <p>Algorithm development using 1-D and 2-D FFTs to calculate range and velocity, validating the ghost target elimination theory.</p>
                 </div>
                 
                 <div class="gallery-card">
-                    <img src="FMCW_circuit.png" alt="FMCW Radar Prototype Hardware" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=Hardware+Prototype'">
+                    <img class="expandable-image" src="FMCW_circuit.png" alt="FMCW Radar Prototype Hardware" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=Hardware+Prototype'">
                     <h3>Hardware Prototype</h3>
                     <p>The physical system integrating the ADF4350 RF generator, mixer, RF amplifier, and custom power splitter interfaces.</p>
                 </div>
 
                 <div class="gallery-card">
-                    <img src="signal_divider.png" alt="Custom Signal Divider Design" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=Signal+Divider'">
+                    <img class="expandable-image" src="signal_divider.png" alt="Custom Signal Divider Design" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=Signal+Divider'">
                     <h3>Custom Signal Divider</h3>
                     <p>A custom-designed Wye-configuration power splitter for efficient low-frequency signal distribution.</p>
                 </div>
 
                 <div class="gallery-card">
-                    <img src="LTspice.png" alt="LTSpice Low-Pass Filter Simulation" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=LTSpice+Filter'">
+                    <img class="expandable-image" src="LTspice.png" alt="LTSpice Low-Pass Filter Simulation" onerror="this.src='https://placehold.co/600x400/14355c/4fd1c5?text=LTSpice+Filter'">
                     <h3>LTSpice Filter Simulation</h3>
                     <p>LTSpice simulation of the 4th-order Butterworth low-pass filter and amplifier circuit designed to isolate the critical low-frequency beat signals.</p>
+                </div>
+            </div>
+
+            <!-- Split Screen Certificate Section -->
+            <div class="certificate-section" data-aos="fade-up">
+                <div class="certificate-image">
+                    <img class="expandable-image" src="Tubitak-FMCW.jpg" alt="TÜBİTAK Project Certificate">
+                </div>
+                <div class="certificate-text">
+                    <h2 class="project-sub-heading" style="margin-bottom: 15px;">Project Recognition</h2>
+                    <p class="project-text">
+                        This certificate was issued by the Dokuz Eylül Üniversitesi Engineering Faculty to Berkay Aydın, a student in the Electrical-Electronics Engineering Department[cite: 1]. It officially recognizes that his project, titled "fmcw Tabanlı Radar Sistemi Gerçeklenmesi Ve Hayalet Hedeflerin Tespiti" (Realization of fmcw Based Radar System and Detection of Ghost Targets), qualified for support under the TÜBİTAK 2209-A University Students Research Projects program during the 2023 2nd term[cite: 1]. The project was conducted alongside advisor Prof. Dr. Olcay AKAY[cite: 1]. The document is dated 22.04.2024 and is signed by Acting Dean Prof. Dr. Azize AYOL[cite: 1].
+                    </p>
                 </div>
             </div>
 
         </section>
     </main>
 
+    <!-- Modal for expanding images -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="expandedImage">
+    </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>       
+        // Initialize AOS animations
         AOS.init({
             once: true,
             delay: 50,
             duration: 800
+        });
+
+        // Image Expansion (Lightbox) Logic
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImage");
+        const images = document.querySelectorAll(".expandable-image");
+        const closeModal = document.querySelector(".close-modal");
+
+        // Open modal on image click
+        images.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.classList.add("show");
+                modalImg.src = this.src;
+                // Prevent scrolling on background when modal is open
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        // Close modal functions
+        const hideModal = () => {
+            modal.classList.remove("show");
+            document.body.style.overflow = "auto";
+        };
+
+        // Close when clicking the 'X'
+        closeModal.addEventListener("click", hideModal);
+
+        // Close when clicking outside the image
+        modal.addEventListener("click", function(e) {
+            if (e.target !== modalImg) {
+                hideModal();
+            }
+        });
+
+        // Close on Escape key press
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape" && modal.classList.contains("show")) {
+                hideModal();
+            }
         });
     </script>
 </body>
